@@ -11,7 +11,13 @@
         <input asp-for="FizzBuzz.Number" /><br />
         <button type="submit">Zatwierdź</button>
     </form>
-    @if (Model.Result == "FizzBuzz" || Model.Result == "Fizz" || Model.Result == "Buzz" || Model.Result == "FizzBuzz" || Model.Result == "Liczba " + Model.FizzBuzz.Number + " nie spełnia warunkow FizzBuzz")
+        @if (Model.Result == "FizzBuzz" || Model.Result == "Fizz" || Model.Result == "Buzz" || Model.Result == "FizzBuzz")
+        {
+            <div class="alert alert-danger" role="alert">
+                @Model.Result
+        </div>
+    }
+    else
     {
         <div class="alert alert-danger" role="alert">
             @Model.Result
